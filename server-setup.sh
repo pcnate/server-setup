@@ -59,7 +59,7 @@ apt-update
 
 apt-get dist-upgrade
 
-apt-get install htop bwm-ng sudo wget apt-show-versions apache2 -y
+apt-get install htop bwm-ng sudo wget apt-show-versions -y
 
 
 # create users
