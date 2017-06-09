@@ -34,15 +34,6 @@ echo "Updating apt..."
 echo
 apt-get update
 
-
-# check to see if apt-show-versions is installed, if not, then install it
-if [ ! -x /usr/bin/apt-show-versions ]; then
-        echo
-        echo "Installing apt-show-versions"
-        echo
-        apt-get install -y apt-show-versions
-fi
-
 # execute apt-show-versions then use grep to show only upgradeable packages
 echo
 echo "Displaying upgradeable packages..."
@@ -55,11 +46,11 @@ echo
 
 chmod +x /bin/apt-update
 
-apt-update
+apt-get update
 
-apt-get dist-upgrade
+apt-get dist-upgrade -y
 
-apt-get install htop bwm-ng sudo wget apt-show-versions -y
+apt-get install htop bwm-ng sudo wget apt-show-versions fail2ban -y
 
 
 # create users
