@@ -1,7 +1,0 @@
-deluser nbaker
-deluser scruss
-deluser dpndbl
-
-rm -r /home/nbaker/
-rm -r /home/dpndbl/
-rm -r /home/scruss/
