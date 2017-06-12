@@ -50,7 +50,7 @@ apt-get update
 
 apt-get dist-upgrade -y
 
-apt-get install htop bwm-ng sudo wget apt-show-versions fail2ban -y
+apt-get install htop bwm-ng sudo wget apt-show-versions fail2ban libpam-systemd dbus -y
 
 
 # create users
