@@ -65,6 +65,7 @@ while read p; do
                 #useradd -p $( perl -e 'print( $ARGV[0], "password")' "Hunterway*") -m $USER
                 echo "$USER:Hunterway*" | chpasswd
                 usermod -aG sudo $USER
+                usermod -aG www-data $USER
 
                 # deploy ssh keys
                 mkdir /home/$USER/.ssh
