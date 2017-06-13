@@ -15,34 +15,7 @@ else
 fi
 
 # create the apt-update script
-echo '#! /bin/sh
-#
-# author: Nathan Baker (unr34l-dud3)
-# date: February 16th, 2012
-# desc: quick and dirty script to update apt and show upgradeable packages in one command
-
-# check if this is run by root, if not then restart with sudo
-if [ "$(id -u)" != "0" ]; then
-        sudo $0
-        exit 1
-fi
-
-# update using apt-get update
-clear
-echo
-echo "Updating apt..."
-echo
-apt-get update
-
-# execute apt-show-versions then use grep to show only upgradeable packages
-echo
-echo "Displaying upgradeable packages..."
-echo
-apt-show-versions | grep upgradeable
-
-echo "Done"
-echo
-' > /bin/apt-update
+echo $'#! /bin/sh\n#\n# author: Nathan Baker (unr34l-dud3)\n# date: February 16th, 2012\n# desc: quick and dirty script to update apt and show upgradeable packages in one command\n# check if this is run by root, if not then restart with sudo\nif [ "$(id -u)" != "0" ]; then\n        sudo $0\n        exit 1\nfi\n# update using apt-get update\nclear\necho\necho "Updating apt..."\necho\napt-get update\n# execute apt-show-versions then use grep to show only upgradeable packages\necho\necho "Displaying upgradeable packages..."\necho\napt-show-versions | grep upgradeable\necho "Done"\necho\n' > /bin/apt-update
 
 chmod +x /bin/apt-update
 
@@ -50,7 +23,7 @@ apt-get update
 
 apt-get dist-upgrade -y
 
-apt-get install htop bwm-ng sudo wget apt-show-versions fail2ban libpam-systemd dbus -y
+apt-get install htop bwm-ng sudo wget apt-show-versions fail2ban libpam-systemd dbus screen -y
 
 
 # create users
