@@ -16,8 +16,10 @@ fi
 
 # create the apt-update script
 echo $'#! /bin/sh\n#\n# author: Nathan Baker (unr34l-dud3)\n# date: February 16th, 2012\n# desc: quick and dirty script to update apt and show upgradeable packages in one command\n# check if this is run by root, if not then restart with sudo\nif [ "$(id -u)" != "0" ]; then\n        sudo $0\n        exit 1\nfi\n# update using apt-get update\nclear\necho\necho "Updating apt..."\necho\napt-get update\n# execute apt-show-versions then use grep to show only upgradeable packages\necho\necho "Displaying upgradeable packages..."\necho\napt-show-versions | grep upgradeable\necho "Done"\necho\n' > /bin/apt-update
+wget https://raw.githubusercontent.com/dpndbl/server-setup/master/bin/ratom.sh -O /usr/local/bin/ratom
 
 chmod +x /bin/apt-update
+chmod +x /usr/local/bin/ratom
 
 apt-get update
 
