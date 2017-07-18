@@ -6,7 +6,7 @@
 # desc: setup users, install packages and add some scripts
 
 # grab scripts
-wget https://raw.githubusercontent.com/dpndbl/server-setup/master/bin/apt-update.sh -O /bin/apt-update
+wget https://raw.githubusercontent.com/dpndbl/server-setup/master/bin/apt-update.sh -O /usr/local/bin/apt-update
 wget https://raw.githubusercontent.com/dpndbl/server-setup/master/bin/ratom.sh -O /usr/local/bin/ratom
 wget https://raw.githubusercontent.com/dpndbl/server-setup/master/bin/la.sh -O /usr/local/bin/la
 
