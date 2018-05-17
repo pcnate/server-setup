@@ -21,12 +21,12 @@ Setup the basic server with the following script
 ```bash
 curl https://github.com/dpndbl/server-setup/blob/master/server-setup.sh | sudo -E bash -
 ```
-Change the passwords for your account and the dpndbl account.
+Change the passwords for your account and the dpndbl account. Default password is `Hunterway*`
 ```bash
-passwd
+su - username
 ```
 
-Lock the other accounts with
+Lock the accounts that you did not change the password to with
 ```bash
 chage -E0 username
 ```
