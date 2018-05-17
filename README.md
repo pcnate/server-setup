@@ -13,4 +13,6 @@ nano /root/.ssh/authorized_keys
 copy text from https://dpndbl.itglue.com/569683/docs/1888733#version=published&documentMode=view
 
 Setup the basic server with the following script
+```bash
 curl https://github.com/dpndbl/server-setup/blob/master/server-setup.sh | sudo -E bash -
+```
