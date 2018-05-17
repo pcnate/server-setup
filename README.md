@@ -11,7 +11,7 @@ create user account `setupuser` and use whatever password you want for setting i
 
 Add primary developer ssh public keys to the authorized_keys file
 ```bash
-sudo su -
+su -
 ssh-keygen -f ~/.ssh/id_rsa -t rsa -b 8192 -N ''
 nano /root/.ssh/authorized_keys
 ```
