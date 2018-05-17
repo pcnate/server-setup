@@ -18,9 +18,14 @@ nano /root/.ssh/authorized_keys
 ```
 copy text from https://dpndbl.itglue.com/569683/docs/1888733#version=published&documentMode=view
 
+Set a static ip if it is not already
+https://linuxconfig.org/how-to-setup-a-static-ip-address-on-debian-linux
+
+Be sure to whitelist the server
+
 Setup the basic server with the following script
 ```bash
-curl https://github.com/dpndbl/server-setup/blob/master/server-setup.sh | sudo -E bash -
+curl https://raw.githubusercontent.com/dpndbl/server-setup/master/server-setup.sh | sudo -E bash -
 ```
 Change the passwords for your account and the dpndbl account. Default password is `Hunterway*`
 ```bash
