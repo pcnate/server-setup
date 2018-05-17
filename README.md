@@ -28,7 +28,7 @@ su - username
 
 Lock the accounts that you did not change the password to with
 ```bash
-chage -E0 username
+sudo chage -E0 username
 ```
 
 delete the setup user
