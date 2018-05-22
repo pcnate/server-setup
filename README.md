@@ -18,7 +18,7 @@ nano /root/.ssh/authorized_keys
 ```
 copy text from https://dpndbl.itglue.com/569683/docs/1888733#version=published&documentMode=view
 
-Set a static ip if it is not already
+Set a static ip if it is not already. you can do this later too if you are not onsite, you need internet access to continue
 https://linuxconfig.org/how-to-setup-a-static-ip-address-on-debian-linux
 
 Be sure to whitelist the server
@@ -29,13 +29,23 @@ curl https://raw.githubusercontent.com/dpndbl/server-setup/master/server-setup.s
 ```
 Change the passwords for your account and the dpndbl account. Default password is `Hunterway*`
 ```bash
+#switch to that user
 su - username
+
+# change the password
+passwd
+
+# then exit
+exit
 ```
 
 Lock the accounts that you did not change the password to with
 ```bash
+# lock a user out
 sudo chage -E0 username
 ```
+
+use `exit` to logout and the log back in as yourself
 
 delete the setup user
 ```bash
