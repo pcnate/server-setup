@@ -52,4 +52,36 @@ delete the setup user
 sudo deluser setupuser --remove-home --quiet
 ```
 
-You should now be able to ssh into the machine
+
+# External Hard Drives
+# NTFS ( harder )
+you can access it from Windows 
+```bash
+sudo apt-get install ntfs-3g exfat-fuse -y
+
+# show your disks
+sudo fdisk -l
+
+# get the UUID 
+sudo blkid /dev/sdb1
+
+#backup fstab file, just in case
+sudo cp /etc/fstab /root/fstab
+
+# add the disk to /etc/fstab using the partitions UUID
+sudo sh - c 'echo UUID=\"4860F68460F677D0\" /media/fogbackup/ ntfs auto,hotplug,nofail,nls-utf8,umask-0222,uid-1000,gid-1000,rw 0 0 >> /etc/fstab'
+
+# verify contents and changed UUID if you haven't already
+sudo nano /etc/fstab
+
+# check disks, then test mount then check again
+df -h
+sudo mount -a
+df -h
+
+# if it shows up, powering it off, then wait a few secs, then back on to see if it disappears and shows up again
+# try rebooting with the drive turned off
+```
+
+# ext4 ( easy )
+requires Mac or Linux to read the disk
