@@ -85,3 +85,27 @@ df -h
 
 # ext4 ( easy )
 requires Mac or Linux to read the disk
+```bash
+# show your disks
+sudo fdisk -l
+
+#backup fstab file, just in case
+sudo cp /etc/fstab /root/fstab
+
+# make sure the disk is labeled
+sudo e2label /dev/sdb fogbackup
+
+# add the following line to /etc/fstab
+sudo sh - c 'echo LABEL=fogbackup         /media/fogbackup/   ext4    auto,nofail,defaults     0        2' >> /etc/fstab'
+
+# verify contents and changed UUID if you haven't already
+sudo nano /etc/fstab
+
+# check disks, then test mount then check again
+df -h
+sudo mount -a
+df -h
+
+# if it shows up, powering it off, then wait a few secs, then back on to see if it disappears and shows up again
+# try rebooting with the drive turned off
+```
