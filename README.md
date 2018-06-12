@@ -6,6 +6,8 @@ For a physical machine, ensure BIOS is setup to power on the machine after a pow
 Build the server using the latest version of Debian Linux
 https://www.debian.org/distrib/netinst
 
+Be sure to select SSH server. No need to select Gnome desktop unless users will be logging into the machine. No need to be a print server. Anything else can be done after the setup and just makes the setup process take longer.
+
 Set root password and save it in ITGLUE
 create user account `setupuser` and use whatever password you want for setting it up
 
