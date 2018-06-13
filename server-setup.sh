@@ -32,6 +32,8 @@ while read p; do
                 echo "$USER:Hunterway*" | chpasswd
                 usermod -aG sudo $USER
                 usermod -aG www-data $USER
+                # force group writable files
+                su -c 'umask 002' -l $USER
 
                 # deploy ssh keys
                 mkdir /home/$USER/.ssh
