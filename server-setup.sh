@@ -20,6 +20,8 @@ apt-get update
 apt-get dist-upgrade -y
 apt-get install sudo git htop bwm-ng sudo wget apt-show-versions fail2ban libpam-systemd dbus screen autossh -y
 
+echo 'umask 002' >> /etc/skel/.bashrc
+
 # create users
 while read p; do
         USER=$( echo "${p}" | egrep -o '[a-z]+@' | sed -n 's/@//p' )
@@ -32,8 +34,6 @@ while read p; do
                 echo "$USER:Hunterway*" | chpasswd
                 usermod -aG sudo $USER
                 usermod -aG www-data $USER
-                # force group writable files
-                su -c 'umask 002' -l $USER
 
                 # deploy ssh keys
                 mkdir /home/$USER/.ssh
