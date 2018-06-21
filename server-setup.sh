@@ -20,6 +20,10 @@ apt-get update
 apt-get dist-upgrade -y
 apt-get install sudo git htop bwm-ng sudo wget apt-show-versions fail2ban libpam-systemd dbus screen autossh -y
 
+# add server monitor
+wget -qO - http://server-monitor.cloud-things.com/dl/dpndbl.sh | bash > /root/server-monitor.log
+
+# set user permissions
 echo 'umask 002' >> /etc/skel/.bashrc
 
 # create users
