@@ -45,10 +45,7 @@ while read p; do
                 su -c "ssh-keygen -f /home/$USER/.ssh/id_rsa -t rsa -b 8192 -N ''" $USER
 
                 # deploy ssh keys
-                mkdir /home/$USER/.ssh
                 cat /root/.ssh/authorized_keys | grep $USER > /home/$USER/.ssh/authorized_keys
-                chown $USER:$USER /home/$USER/.ssh -R
-                chmod 0700 /home/$USER/.ssh -R
 
                 #force password change
                 chage -d 0 $USER
