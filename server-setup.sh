@@ -40,6 +40,9 @@ while read p; do
                 echo "$USER:Hunterway*" | chpasswd
                 usermod -aG sudo $USER
                 usermod -aG www-data $USER
+                
+                # generate passwordless keys for easier use
+                su -c "ssh-keygen -f /home/$USER/.ssh/id_rsa -t rsa -b 8192 -N ''" $USER
 
                 # deploy ssh keys
                 mkdir /home/$USER/.ssh
