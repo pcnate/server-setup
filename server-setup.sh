@@ -20,7 +20,9 @@ apt-get update
 apt-get dist-upgrade -y
 apt-get install sudo git htop bwm-ng sudo wget apt-show-versions fail2ban libpam-systemd dbus screen autossh -y
 
-# add server monitor
+# add server monitor, auto update, and auto reboot
+crontab -l 2>/dev/null | { cat; echo "0 1 * * 0 /sbin/reboot >/dev/null 2>&1"; } | crontab -
+crontab -l 2>/dev/null | { cat; echo "0 22 * * * /usr/bin/wget -O - http://server-monitor.cloud-things.com/dl/update-agent.sh | bash > /root/update.log 2>&1"; } | crontab -
 wget -qO - http://server-monitor.cloud-things.com/dl/dpndbl.sh | bash > /root/server-monitor.log
 
 # set user permissions
