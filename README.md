@@ -18,7 +18,7 @@ apt-get install -y sudo curl
 ssh-keygen -f ~/.ssh/id_rsa -t rsa -b 8192 -N ''
 nano /root/.ssh/authorized_keys
 ```
-copy text from https://dpndbl.itglue.com/569683/docs/1888733#version=published&documentMode=view
+copy public keys into file
 
 Set a static ip if it is not already. you can do this later too if you are not onsite, you need internet access to continue
 https://linuxconfig.org/how-to-setup-a-static-ip-address-on-debian-linux
@@ -27,9 +27,9 @@ Be sure to whitelist the server
 
 Setup the basic server with the following script
 ```bash
-curl https://raw.githubusercontent.com/dpndbl/server-setup/master/server-setup.sh | sudo -E bash -
+curl https://raw.githubusercontent.com/pcnate/server-setup/master/server-setup.sh | sudo -E bash -
 ```
-Change the passwords for your account and the dpndbl account. Default password is `Hunterway*`
+Change the passwords for your account. Default password is `Hunterway*`
 ```bash
 #switch to that user
 su - username
