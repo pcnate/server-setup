@@ -6,9 +6,9 @@
 # desc: setup users, install packages and add some scripts
 
 # grab scripts
-wget https://raw.githubusercontent.com/dpndbl/server-setup/master/bin/apt-update.sh -O /usr/local/bin/apt-update
-wget https://raw.githubusercontent.com/dpndbl/server-setup/master/bin/ratom.sh -O /usr/local/bin/ratom
-wget https://raw.githubusercontent.com/dpndbl/server-setup/master/bin/la.sh -O /usr/local/bin/la
+wget https://raw.githubusercontent.com/pcnate/server-setup/master/bin/apt-update.sh -O /usr/local/bin/apt-update
+wget https://raw.githubusercontent.com/pcnate/server-setup/master/bin/ratom.sh -O /usr/local/bin/ratom
+wget https://raw.githubusercontent.com/pcnate/server-setup/master/bin/la.sh -O /usr/local/bin/la
 
 # allow executing scripts
 chmod +x /usr/local/bin/apt-update
@@ -20,10 +20,9 @@ apt-get update
 apt-get dist-upgrade -y
 apt-get install sudo git htop bwm-ng sudo wget apt-show-versions fail2ban libpam-systemd dbus screen autossh -y
 
-# add server monitor, auto update, and auto reboot
+# add auto reboot
 crontab -l 2>/dev/null | { cat; echo "0 1 * * 0 /sbin/reboot >/dev/null 2>&1"; } | crontab -
-crontab -l 2>/dev/null | { cat; echo "0 22 * * * /usr/bin/wget -O - http://server-monitor.cloud-things.com/dl/update-agent.sh | bash > /root/update.log 2>&1"; } | crontab -
-wget -qO - http://server-monitor.cloud-things.com/dl/dpndbl.sh | bash > /root/server-monitor.log
+
 
 # set user permissions
 echo 'umask 002' >> /etc/skel/.bashrc
