@@ -14,7 +14,7 @@ chmod +x /usr/local/bin/apt-update
 chmod +x /usr/local/bin/ratom
 chmod +x /usr/local/bin/la
 
-# update ad install some basic packages
+# update and install some basic packages
 apt-get update
 
 USER=nbaker
