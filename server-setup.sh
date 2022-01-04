@@ -15,7 +15,7 @@ chmod +x /usr/local/bin/apt-update
 chmod +x /usr/local/bin/ratom
 chmod +x /usr/local/bin/la
 
-# update ad install some basic packages
+# update and install some basic packages
 apt-get update
 apt-get dist-upgrade -y
 apt-get install sudo git htop bwm-ng sudo wget apt-show-versions fail2ban libpam-systemd dbus screen autossh open-vm-tools -y
