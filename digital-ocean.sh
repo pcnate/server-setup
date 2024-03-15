@@ -47,8 +47,8 @@ if [ -f /etc/fedora-release ]; then
 fi
 
 # update and install some basic packages on centos based systems
-if [ -f /etc/centos-release ] \
-   [ -f /etc/almalinux-release ] \
+if [ -f /etc/centos-release ] || \
+   [ -f /etc/almalinux-release ] || \
    [ -f /etc/rocky-release ]; then
   yum check-update
   yum update -y
