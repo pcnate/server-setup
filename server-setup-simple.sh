@@ -6,8 +6,8 @@
 
 # grab scripts
 wget https://raw.githubusercontent.com/pcnate/server-setup/master/bin/apt-update.sh -O /usr/local/bin/apt-update
-wget https://raw.githubusercontent.com/pcnate/server-setup/master/bin/ratom.sh -O /usr/local/bin/ratom
 wget https://raw.githubusercontent.com/pcnate/server-setup/master/bin/la.sh -O /usr/local/bin/la
+wget https://raw.githubusercontent.com/aurora/rmate/master/rmate -O /usr/local/bin/rmate
 
 # allow executing scripts
 chmod +x /usr/local/bin/apt-update
