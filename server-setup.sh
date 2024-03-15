@@ -1,4 +1,3 @@
-
 #! /bin/sh
 #
 # author: Nathan Baker (unr34l-dud3)
@@ -14,6 +13,10 @@ if [ ! -x /usr/bin/wget ]; then
   if [ -f /etc/fedora-release ]; then
     dnf check-update
     dnf install wget -y
+  fi
+  if [ -f /etc/centos-release || -f /etc/almalinux-release ]; then
+    yum check-update
+    yum install wget nano -y
   fi
 fi
 
