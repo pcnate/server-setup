@@ -15,7 +15,8 @@ if [ ! -x /usr/bin/wget ]; then
     dnf install wget -y
   fi
   if [ -f /etc/centos-release ] || \
-     [ -f /etc/almalinux-release ]; then
+     [ -f /etc/almalinux-release ] || \
+     [ -f /etc/rocky-release ]; then
     yum check-update
     yum install wget nano -y
   fi
@@ -47,7 +48,8 @@ fi
 
 # update and install some basic packages on centos based systems
 if [ -f /etc/centos-release ] \
-   [ -f /etc/almalinux-release ]; then
+   [ -f /etc/almalinux-release ] \
+   [ -f /etc/rocky-release ]; then
   yum check-update
   yum update -y
   yum install sudo git sudo open-vm-tools unzip -y
