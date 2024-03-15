@@ -50,9 +50,11 @@ fi
 if [ -f /etc/centos-release ] || \
    [ -f /etc/almalinux-release ] || \
    [ -f /etc/rocky-release ]; then
+  yum install -y epel-release
   yum check-update
   yum update -y
-  yum install sudo git sudo open-vm-tools unzip -y
+  # yum install sudo git sudo open-vm-tools unzip -y
+  dnf install sudo git htop bwm-ng sudo fail2ban screen autossh open-vm-tools unzip -y
 fi
 
 # install oh-my-posh
