@@ -14,7 +14,8 @@ if [ ! -x /usr/bin/wget ]; then
     dnf check-update
     dnf install wget -y
   fi
-  if [ -f /etc/centos-release || -f /etc/almalinux-release ]; then
+  if [ -f /etc/centos-release ] || \
+     [ -f /etc/almalinux-release ]; then
     yum check-update
     yum install wget nano -y
   fi
