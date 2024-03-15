@@ -25,7 +25,8 @@ fi
 
 
 # check to see if apt-show-versions is installed, if not, then install it
-if [ -f /etc/debian_version && ! -x /usr/bin/apt-show-versions ]; then
+if [ -f /etc/debian_version ] && \
+   [ ! -x /usr/bin/apt-show-versions ]; then
   echo
   echo "Installing apt-show-versions"
   echo
@@ -37,7 +38,8 @@ echo
 echo "Displaying upgradeable packages..."
 echo
 # if debian based and apt-show-versions is installed
-if [ -f /etc/debian_version && -x /usr/bin/apt-show-versions ]; then
+if [ -f /etc/debian_version ] && \
+   [ -x /usr/bin/apt-show-versions ]; then
   apt-show-versions | grep upgradeable
 fi
 if [ -f /etc/fedora-release ]; then

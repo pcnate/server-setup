@@ -94,15 +94,9 @@ if [ -f /etc/debian_version ]; then
   adduser --quiet --gecos "" $USER --disabled-password
   echo "$USER:$PASSWORD" | chpasswd
 fi
-if [ -f /etc/fedora-release ]; then
-  useradd $USER
-  echo "$PASSWORD" | passwd $USER --stdin
-fi
-if [ -f /etc/centos-release ]; then
-  useradd $USER
-  echo "$PASSWORD" | passwd $USER --stdin
-fi
-if [ -f /etc/almalinux-release ]; then
+if [ -f /etc/fedora-release ] || \
+   [ -f /etc/centos-release ] || \
+   [ -f /etc/almalinux-release ]; then
   useradd $USER
   echo "$PASSWORD" | passwd $USER --stdin
 fi
