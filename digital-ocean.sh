@@ -46,17 +46,10 @@ if [ -f /etc/fedora-release ]; then
 fi
 
 # update and install some basic packages on centos based systems
-if [ -f /etc/centos-release ]; then
+if [ -f /etc/centos-release ] \
+   [ -f /etc/almalinux-release ]; then
   yum check-update
   yum update -y
-  yum install sudo git htop bwm-ng sudo fail2ban screen autossh open-vm-tools unzip -y
-fi
-
-# update and install some basic packages on almalinux based systems
-if [ -f /etc/almalinux-release ]; then
-  yum check-update
-  yum update -y
-  # TODO a few packages are not available in almalinux, need to find a replacement
   yum install sudo git sudo open-vm-tools unzip -y
 fi
 
