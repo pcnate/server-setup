@@ -99,7 +99,7 @@
             "raspbian": "root",
             "ubuntu": "root",
             "almalinux": "root",
-            "rockylinux": "root",
+            "rocky": "root",
             "windows": "admin"
           },
           "template": "{{ if .Root }} {{ .Icon }}{{else}} {{ .UserName }}{{end}}",
