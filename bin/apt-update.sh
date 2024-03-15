@@ -19,7 +19,10 @@ echo
 if [ -f /etc/debian_version ]; then
   apt-get update
 fi
-if [ -f /etc/fedora-release ]; then
+if [ -f /etc/fedora-release ] || \
+   [ -f /etc/centos-release ] || \
+   [ -f /etc/almalinux-release ] || \
+   [ -f /etc/rocky-release ]; then
   dnf check-update
 fi
 
@@ -42,8 +45,12 @@ if [ -f /etc/debian_version ] && \
    [ -x /usr/bin/apt-show-versions ]; then
   apt-show-versions | grep upgradeable
 fi
-if [ -f /etc/fedora-release ]; then
+if [ -f /etc/fedora-release ] || \
+   [ -f /etc/centos-release ] || \
+   [ -f /etc/almalinux-release ] || \
+   [ -f /etc/rocky-release ]; then
   dnf list updates
+  echo "To install updates, run: dnf update -y"
 fi
 
 echo "Done"
