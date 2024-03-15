@@ -7,8 +7,8 @@
 
 # check if this is run by root, if not then restart with sudo
 if [ "$(id -u)" != "0" ]; then
-        sudo $0
-        exit 1
+  sudo $0
+  exit 1
 fi
 
 # update using apt-get update
@@ -16,22 +16,33 @@ clear
 echo
 echo "Updating apt..."
 echo
-apt-get update
+if [ -f /etc/debian_version ]; then
+  apt-get update
+fi
+if [ -f /etc/fedora-release ]; then
+  dnf check-update
+fi
 
 
 # check to see if apt-show-versions is installed, if not, then install it
-if [ ! -x /usr/bin/apt-show-versions ]; then
-        echo
-        echo "Installing apt-show-versions"
-        echo
-        apt-get install -y apt-show-versions
+if [ -f /etc/debian_version && ! -x /usr/bin/apt-show-versions ]; then
+  echo
+  echo "Installing apt-show-versions"
+  echo
+  apt-get install -y apt-show-versions
 fi
 
-# execute apt-show-versions then use grep to show only upgradeable packages
+# show upgradeable packages
 echo
 echo "Displaying upgradeable packages..."
 echo
-apt-show-versions | grep upgradeable
+# if debian based and apt-show-versions is installed
+if [ -f /etc/debian_version && -x /usr/bin/apt-show-versions ]; then
+  apt-show-versions | grep upgradeable
+fi
+if [ -f /etc/fedora-release ]; then
+  dnf list updates
+fi
 
 echo "Done"
 echo
