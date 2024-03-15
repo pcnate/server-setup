@@ -1,6 +1,8 @@
 # server-setup
 Setup Linux servers with users, ssh keys and basic packages etc
 
+originially forked from https://github.com/jatt-software/server-setup when I used to work there.
+
 For a physical machine, ensure BIOS is setup to power on the machine after a power outage and not require a keyboard
 
 Build the server using the latest version of Debian Linux
