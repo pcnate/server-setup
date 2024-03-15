@@ -92,7 +92,8 @@ if [ -f /etc/debian_version ]; then
 fi
 if [ -f /etc/fedora-release ] || \
    [ -f /etc/centos-release ] || \
-   [ -f /etc/almalinux-release ]; then
+   [ -f /etc/almalinux-release ] || \
+   [ -f /etc/rocky-release ]; then
   useradd $USER
   echo "$PASSWORD" | passwd $USER --stdin
 fi
