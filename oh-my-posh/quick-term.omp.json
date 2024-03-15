@@ -98,6 +98,8 @@
             "opensuse": "root",
             "raspbian": "root",
             "ubuntu": "root",
+            "almalinux": "root",
+            "rockylinux": "root",
             "windows": "admin"
           },
           "template": "{{ if .Root }} {{ .Icon }}{{else}} {{ .UserName }}{{end}}",
