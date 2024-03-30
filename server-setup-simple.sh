@@ -35,14 +35,14 @@ chmod +x /usr/local/bin/rmate
 if [ -f /etc/debian_version ]; then
   apt-get update
   apt-get dist-upgrade -y
-  apt-get install sudo git htop bwm-ng sudo apt-show-versions fail2ban screen autossh open-vm-tools unzip -y
+  apt-get install sudo git htop bwm-ng sudo apt-show-versions fail2ban screen autossh open-vm-tools unzip curl -y
 fi
 
 # update and install some basic packages on fedora based systems
 if [ -f /etc/fedora-release ]; then
   dnf check-update
   dnf update -y
-  dnf install sudo git htop bwm-ng sudo fail2ban screen autossh open-vm-tools unzip -y
+  dnf install sudo git htop bwm-ng sudo fail2ban screen autossh open-vm-tools unzip curl -y
 fi
 
 # update and install some basic packages on centos based systems
@@ -57,7 +57,7 @@ if [ -f /etc/centos-release ] || \
     yum update -y
   fi
   # yum install sudo git sudo open-vm-tools unzip -y
-  dnf install sudo git htop bwm-ng sudo fail2ban screen autossh open-vm-tools unzip -y
+  dnf install sudo git htop bwm-ng sudo fail2ban screen autossh open-vm-tools unzip curl -y
 fi
 
 # install oh-my-posh
