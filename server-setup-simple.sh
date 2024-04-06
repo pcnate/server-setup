@@ -35,7 +35,7 @@ chmod +x /usr/local/bin/rmate
 if [ -f /etc/debian_version ]; then
   apt-get update
   apt-get dist-upgrade -y
-  apt-get install sudo git htop bwm-ng sudo apt-show-versions fail2ban screen autossh open-vm-tools unzip curl -y
+  apt-get install sudo git htop bwm-ng sudo apt-show-versions fail2ban screen autossh open-vm-tools unzip curl atop btop -y
 fi
 
 # update and install some basic packages on fedora based systems
