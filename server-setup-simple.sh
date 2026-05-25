@@ -61,7 +61,7 @@ if [ -f /etc/centos-release ] || \
 fi
 
 # install oh-my-posh
-wget https://ohmyposh.dev/install.sh -O - | bash
+wget https://ohmyposh.dev/install.sh -O - | bash -s -- -d /usr/local/sbin/
 cp ./oh-my-posh/quick-term.omp.json /usr/local/bin/quick-term.omp.json
 
 # set a variable to be evaled and appended to the .bashrc file
